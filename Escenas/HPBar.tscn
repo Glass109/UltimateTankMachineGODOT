@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://xv6fmn1mq6wl"]
+
+[ext_resource type="Texture2D" uid="uid://cinoei73vd8gg" path="res://assets/UI/HUDBarHP/ASDASDAS/HUDanim1.png" id="1_fclvj"]
+[ext_resource type="Script" path="res://Scripts/HPBar.cs" id="1_xchqt"]
+[ext_resource type="Texture2D" uid="uid://cvpchd215jddn" path="res://assets/UI/HUDBarHP/ASDASDAS/HUDanim2.png" id="2_24kep"]
+[ext_resource type="Texture2D" uid="uid://dpl5af3o83d25" path="res://assets/UI/HUDBarHP/ASDASDAS/HUDanim3.png" id="3_x7y3g"]
+[ext_resource type="Texture2D" uid="uid://cadx7lpl2wk41" path="res://assets/UI/HUDBarHP/ASDASDAS/HUDanim4.png" id="4_n44xc"]
+[ext_resource type="Texture2D" uid="uid://dmyf51ll5kouo" path="res://assets/UI/HUDBarHP/ASDASDAS/HUDanim5.png" id="5_16320"]
+[ext_resource type="Texture2D" uid="uid://bn2slhxp1vbj6" path="res://assets/UI/HUDBarHP/ASDASDAS/HUDanim6.png" id="6_qcugl"]
+[ext_resource type="Texture2D" uid="uid://mjwyi5pbawp8" path="res://assets/UI/HPBarV2/HUD-HP0.png" id="7_53qwe"]
+[ext_resource type="Texture2D" uid="uid://b0kumf7x77tvf" path="res://assets/UI/HPBarV2/HUD-HP1.png" id="8_ttlmx"]
+[ext_resource type="Texture2D" uid="uid://jgjqckjxipq8" path="res://assets/UI/HPBarV2/HUD-HP2.png" id="9_adrhu"]
+[ext_resource type="Texture2D" uid="uid://d4bn1l8owbv46" path="res://assets/UI/HPBarV2/HUD-HP3.png" id="10_haaf0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j6g5u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_53qwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ttlmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_adrhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_haaf0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uan78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fclvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_24kep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x7y3g")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_n44xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_16320")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qcugl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n44xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x7y3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_fclvj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="HPBAR" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xchqt")
+metadata/_edit_lock_ = true
+
+[node name="Barra" type="AnimatedSprite2D" parent="."]
+position = Vector2(89, 28)
+sprite_frames = SubResource("SpriteFrames_j6g5u")
+
+[node name="Camara" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_uan78")
+frame = 8
+frame_progress = 1.0
+offset = Vector2(68, 25)

@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsorump51pm6m"]
+
+[ext_resource type="Texture2D" uid="uid://dqppqhbxvyjak" path="res://assets/tanks/TankDOWN.png" id="1_n3ami"]
+[ext_resource type="Script" path="res://Scripts/Movimiento.cs" id="1_w4cta"]
+[ext_resource type="Texture2D" uid="uid://d4c8c4tkm6sjr" path="res://assets/tanks/TankUP.png" id="3_ulkuk"]
+[ext_resource type="AudioStream" uid="uid://dhbaakqlamf2m" path="res://assets/sfx/GameSFX/Weapon/Retro Gun SingleShot 04.wav" id="5_1bqah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sphjd"]
+size = Vector2(62.9999, 82.0001)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0jnuk"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[sub_resource type="Animation" id="Animation_g5bwf"]
+resource_name = "Invencibility"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AreaDetectar:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 2.20586, -0.0135875, 1, -0.0772378, -1.12486, 0.25, 0),
+"times": PackedFloat32Array(0.1, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1.84851, -0.0493531, 1, 0, -1.11691, 0.25, 0),
+"times": PackedFloat32Array(0.1, 3)
+}
+
+[sub_resource type="Animation" id="Animation_dtheu"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_caakw"]
+_data = {
+"Invencibility": SubResource("Animation_g5bwf"),
+"RESET": SubResource("Animation_dtheu")
+}
+
+[node name="Tanque" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(-8, -5)
+rotation = 1.5708
+collision_mask = 4
+script = ExtResource("1_w4cta")
+_cadenciaFuego = 0.2
+
+[node name="ColisionTanque" type="CollisionShape2D" parent="."]
+position = Vector2(-2.27374e-13, 1)
+scale = Vector2(0.95082, 0.951219)
+shape = SubResource("RectangleShape2D_sphjd")
+
+[node name="BaseTanq" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_n3ami")
+
+[node name="TopTanq" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 0.799988)
+scale = Vector2(3, 3)
+texture = ExtResource("3_ulkuk")
+offset = Vector2(0, -10)
+
+[node name="SalidaBala" type="Marker2D" parent="TopTanq"]
+position = Vector2(0, -23.8)
+gizmo_extents = 5.0
+
+[node name="ParticulasMira" type="GPUParticles2D" parent="TopTanq/SalidaBala"]
+modulate = Color(0.992157, 0, 0.215686, 1)
+position = Vector2(0, -2.8)
+rotation = 3.14159
+scale = Vector2(3, 3)
+process_material = SubResource("ParticleProcessMaterial_0jnuk")
+speed_scale = 0.5
+local_coords = true
+trail_lifetime = 0.2
+
+[node name="SonidoDisparo" type="AudioStreamPlayer" parent="." groups=["Player"]]
+stream = ExtResource("5_1bqah")
+
+[node name="AreaDetectar" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 24
+priority = 1.0
+
+[node name="FormaColision" type="CollisionShape2D" parent="AreaDetectar"]
+position = Vector2(1.98517, 2.06117)
+scale = Vector2(1.18735, 1.09168)
+shape = SubResource("RectangleShape2D_sphjd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_caakw")
+}

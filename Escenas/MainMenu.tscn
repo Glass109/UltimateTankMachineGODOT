@@ -1,0 +1,375 @@
+[gd_scene load_steps=13 format=3 uid="uid://dp4b5n8txc0fg"]
+
+[ext_resource type="Theme" uid="uid://f3le0h8kw2w3" path="res://assets/TEMA/TEMA.tres" id="1_yrdjg"]
+[ext_resource type="AudioStream" uid="uid://bfv6m6n6wlujd" path="res://assets/music/Ludum Dare 30 - Track 8.wav" id="2_k8hjr"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="2_q4if7"]
+[ext_resource type="Texture2D" uid="uid://dudiwqe1tmg8w" path="res://assets/UI/TanquesitosBG.png" id="2_rixxd"]
+[ext_resource type="Texture2D" uid="uid://dgxmbeujw5dmg" path="res://assets/UI/TanquesitosLogo.png" id="3_7big8"]
+[ext_resource type="Texture2D" uid="uid://crte37rber5s1" path="res://assets/UI/TanquesitosFront.png" id="4_4cqiw"]
+[ext_resource type="Texture2D" uid="uid://buwrgyp7x3748" path="res://assets/UI/TanquesitosPosElTanqueNmmsXD.png" id="5_peui6"]
+[ext_resource type="Texture2D" uid="uid://16ifh4kwjnqx" path="res://assets/UI/TanquesitosPaper.png" id="6_vbb8q"]
+
+[sub_resource type="Animation" id="Animation_d3qrf"]
+resource_name = "Inicio"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElTanqueXD:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1666, -0.25, 0, 0.0617488, 927.275, 0, -0.438251, -30.5209, 0.25, 0),
+"times": PackedFloat32Array(0.7, 1.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElTanqueXD:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Front:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Front:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1080, -0.25, 0, 0.1, -555.084, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 0.7)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Paper:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Paper:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1010, -0.25, 0, 0, -424.43, -1.52588e-05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.1, 0.4)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Flash:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0, 3.24722, 1, -0.25, 0, 0.25, 0, 0, -0.0172007, -0.550237, 0.25, 0),
+"times": PackedFloat32Array(1.4, 1.5, 1.8)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HBoxContainer/Label:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HBoxContainer/Label2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VBoxContainer:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Logo:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Flash:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_dup1l"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElTanqueXD:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1666, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElTanqueXD:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.52588e-05, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Front:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Front:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(694, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Paper:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Paper:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1010, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uwyl3"]
+_data = {
+"Inicio": SubResource("Animation_d3qrf"),
+"RESET": SubResource("Animation_dup1l")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k3eaf"]
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource("1_yrdjg")
+script = ExtResource("2_q4if7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uwyl3")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_k8hjr")
+pitch_scale = 0.8
+autoplay = true
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_rixxd")
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -193.0
+offset_top = 86.0
+offset_right = -57.0
+offset_bottom = 136.0
+grow_horizontal = 0
+scale = Vector2(5, 5)
+pivot_offset = Vector2(136, 0)
+texture = ExtResource("3_7big8")
+
+[node name="Paper" type="TextureRect" parent="."]
+layout_mode = 1
+offset_top = 1010.0
+offset_right = 384.0
+offset_bottom = 1226.0
+scale = Vector2(5, 5)
+texture = ExtResource("6_vbb8q")
+
+[node name="ElTanqueXD" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -1666.0
+offset_top = -1.52588e-05
+offset_right = -1282.0
+offset_bottom = 216.0
+scale = Vector2(5, 5)
+texture = ExtResource("5_peui6")
+
+[node name="Front" type="TextureRect" parent="."]
+layout_mode = 1
+offset_top = 694.0
+offset_right = 384.0
+offset_bottom = 910.0
+scale = Vector2(5, 5)
+texture = ExtResource("4_4cqiw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -423.0
+offset_top = 38.0
+offset_right = 284.0
+offset_bottom = 134.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+modulate = Color(0.223529, 0.709804, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Direccion y arte:
+Steven Rejon"
+horizontal_alignment = 1
+
+[node name="SEPARADOR" type="Label" parent="HBoxContainer"]
+modulate = Color(0.223529, 0.709804, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+modulate = Color(0.225415, 0.708952, 1.92523e-07, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Todo lo demas: 
+Raul Donde
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -158.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(180, 158)
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Exit")
+text = "EMPEZAR"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "CREDITOS"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath(".")
+text = "SALIR"
+
+[node name="Flash" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.996078, 0.905882, 0.380392, 0)
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CanvasTexture_k3eaf")

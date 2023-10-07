@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c40c56hupcw2m"]
+
+[ext_resource type="Theme" uid="uid://f3le0h8kw2w3" path="res://assets/TEMA/TEMA.tres" id="1_itg2l"]
+[ext_resource type="Script" path="res://Scripts/Score.cs" id="2_pi685"]
+
+[node name="Puntuacion" type="Label"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_bottom = 300.0
+grow_horizontal = 0
+size_flags_vertical = 1
+theme = ExtResource("1_itg2l")
+theme_override_font_sizes/font_size = 50
+text = "PUNTUACION: 0"
+script = ExtResource("2_pi685")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
